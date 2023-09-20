@@ -202,7 +202,7 @@ function generateArrays(baseNumber, weekly) {
 
 const renderMonthlyChart = () => {
     var options = {
-        colors: ["#ef5f3c", "#c1c1c1"],
+        colors: ["#1B89FF", "#c1c1c1"],
         legend: {
             show: false
         },
@@ -356,7 +356,7 @@ const renderWeeklyChart = () => {
         weeklyR2 = r2
     }
     var options = {
-        colors: ["#ef5f3c", "#c1c1c1"],
+        colors: ["#1B89FF", "#c1c1c1"],
         legend: {
             show: false
         },
@@ -430,7 +430,7 @@ const renderDailyChart = () => {
     console.log(weeklyR1[0]);
 
     var options = {
-        colors: ["#ef5f3c", "#c1c1c1"],
+        colors: ["#1B89FF", "#c1c1c1"],
         legend: {
             show: false
         },
@@ -600,7 +600,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 <div
                   class="w-full flex flex-col gap-4 md:gap-0 md:flex-row justify-center md:justify-between items-center px-4 md:px-10 py-5 mb-10 bg-white shadow-[0px_4px_4px_0px_rgba(0,_0,_0,_0.02)]">
                   <div class="font-[600] text-base lg:text-2xl text-black text-center md:text-start">
-                    Growth Trajectory for <span class="font-normal text-[#EF5F3C]">@${user.username}</span>
+                    Growth Trajectory for <span class="font-normal text-[#1B89FF]">@${user.username}</span>
                   </div>
 
                   <div
@@ -667,7 +667,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                         @${user.username}</div>
                       <div class="flex items-center">
                         <div
-                          class="text-[14px] leading-[15.6px] tracking-[0.52px] flex whitespace-nowrap font-bold text-[#EF5F3C] uppercase">
+                          class="text-[14px] leading-[15.6px] tracking-[0.52px] flex whitespace-nowrap font-bold text-[#1B89FF] uppercase">
                           with SproutySocial</div>
                       </div>
                     </div>
@@ -744,7 +744,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 
                       <div
-                        class="bg-[#EF5F3C] text-white w-[30%] h-ful cursor-pointer rounded-[10px] flex flex-col justify-center itext-center p-2 lg:pt-3 xl:pr-4 lg:pb-[2px] lg:pl-5 lg:shadow-[0_0_3px_#00000040]"
+                        class="bg-[#1B89FF] text-white w-[30%] h-ful cursor-pointer rounded-[10px] flex flex-col justify-center itext-center p-2 lg:pt-3 xl:pr-4 lg:pb-[2px] lg:pl-5 lg:shadow-[0_0_3px_#00000040]"
                         style="transition: all 0.15s ease-in 0s;">
                         <div class="text-[12px] font-MontserratSemiBold lg:text-[16px] font-[600]">
                           with Sprouty</div>

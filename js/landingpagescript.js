@@ -648,7 +648,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                     </svg>
 
                     <img
-                      class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[50px] h-[50px] lg:w-[80px] lg:h-[80px] rounded-full"
+                      class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] rounded-full"
                       src="${user.profile_pic_url}" alt="user-dp">
                   </div>
 

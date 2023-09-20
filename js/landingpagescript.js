@@ -557,7 +557,7 @@ function calculatePercentageDifference(num1, num2) {
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
-    return;
+    // return;
     const res = await getUserData()
     if (res?.message === 'success') {
         // console.log(res.data);
@@ -583,8 +583,8 @@ window.addEventListener('DOMContentLoaded', async () => {
             const root = document.getElementById('root');
             root.innerHTML = `
             <div class="rounded-[14px] shadow-[0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] overflow-hidden">
-              <div id="header" class="bg-[#F2F4F7] text-black h-[70px]">
-                <div class="brand-logo-2 w-nav-brand py-4 px-[32px]">
+              <div id="header" class="bg-[#F2F4F7] text-black py-[15px]">
+                <div class="w-full max-w-[160px] md:max-w-[265px] px-[12px] md:px-[32px]">
                   <img src="images/dash-preview/sproutysocial (1).png" loading="lazy"
                     sizes="(max-width: 767px) 100vw, 265px"
                     srcset="images/dash-preview/sproutysocial (1).png 500w, images/dash-preview/sproutysocial (1).png 800w, images/dash-preview/sproutysocial (1).png 1080w, images/dash-preview/sproutysocial (1).png 1500w"
@@ -597,8 +597,8 @@ window.addEventListener('DOMContentLoaded', async () => {
               </div>
 
               <div
-                class="w-full flex justify-between items-center px-4 md:px-10 py-5 mb-10 bg-white shadow-[0px_4px_4px_0px_rgba(0,_0,_0,_0.02)]">
-                <div class="font-[600] text-base lg:text-2xl text-black">
+                class="w-full flex flex-col gap-4 md:gap-0 md:flex-row justify-center md:justify-between items-center px-4 md:px-10 py-5 mb-10 bg-white shadow-[0px_4px_4px_0px_rgba(0,_0,_0,_0.02)]">
+                <div class="font-[600] text-base lg:text-2xl text-black text-center md:text-start">
                   Growth Trajectory for <span class="font-normal text-[#EF5F3C]">@${user.username}</span>
                 </div>
 
@@ -629,12 +629,12 @@ window.addEventListener('DOMContentLoaded', async () => {
                 </div>
               </div>
 
-              <div class="flex items-center justify-between gap-[25px] px-10 h-[124px] overflow-hidden mt-[35px]">
+              <div class="flex flex-col lg:flex-row items-center justify-between gap-[25px] px-10 mt-[35px]">
                 <!-- user -->
-                <div class="flex items-center rounded-xl border border-[#E0E3EF] bg-[#F9F9FB] pl-5 pr-16 py-[13px]">
+                <div class="flex flex-col md:flex-row justify-center md:justify-start items-center rounded-xl border border-[#E0E3EF] bg-[#F9F9FB] md:h-[124px] px-5 md:pl-5 md:pr-16 py-[13px]">
                   <!-- image -->
                   <div class="relative mr-[12px] lg:mr-[20px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="98" height="98" viewBox="0 0 98 98" fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="98" height="98" viewBox="0 0 98 98" fill="none" class="w-[70px] md:w-[98px] h-[70px] md:h-[98px]">
                       <circle cx="49" cy="49" r="48.0257" stroke="url(#paint0_linear_114_1660)"
                         stroke-width="1.94861" />
                       <defs>
@@ -653,9 +653,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                   </div>
 
                   <!-- details -->
-                  <div class="flex flex-col">
-                    <div class="flex items-center gap-1 text-base lg:text-[20px] font-[500]">${user.full_name}<img alt="" class="lg:hidden platform-logo"
-                        src="https://app.SproutySocial.com/instagram.svg" width="16px" height="16px">
+                  <div class="flex flex-col text-center md:text-start mt-5 md:mt-0">
+                    <div class="flex justify-center md:justify-start items-center gap-1 text-base lg:text-[20px] font-[500]">${user.full_name}<img alt="" class="lg:hidden platform-logo" src="https://app.SproutySocial.com/instagram.svg" width="16px" height="16px">
                     </div>
                     <div class="mt-[6px] mb-3 text-[14px] leading-[16.8px] font-semibold text-[#5A6387]">@${user.username}</div>
                     <div class="flex items-center">
@@ -665,14 +664,14 @@ window.addEventListener('DOMContentLoaded', async () => {
                 </div>
 
                 <!-- stats -->
-                <div class="flex gap-[15px] w-full">
-                  <div class="flex-1 max-w-[190px] border border-[#E0E3EF] h-[124px] rounded-xl overflow-hidden flex flex-col justify-center items-center">
+                <div class="flex flex-col items-center justify-center md:flex-row gap-[15px] w-full">
+                  <div class="flex-1 py-6 md:py-0 min-w-[190px] md:min-w-[150px] max-w-[190px] border border-[#E0E3EF] h-[124px] rounded-xl overflow-hidden flex flex-col justify-center items-center">
                     <div class="text-[14px] lg:text-[16px] font-[600] false">
                       Followers
                     </div>
                     <div class="flex flex-col justify-between items-center text-center relative">
                       <div class="text-[24px] lg:text-4xl lg:leading-[38.4px] font-bold mt-[14px]">
-                        ${numFormatter(user.follower_count)}
+                      ${numFormatter(user.follower_count)}
                       </div>
                       <div class="absolute lg:static top-[calc(100%-10px)] left-[50%] translate-x-[-50%] py-1 px-2 rounded-[7px] bg-[#c8f7e1] text-[#23df85] mt-1 hidden d-flex items-center gap-1 text-[10px] lg:text-[12px] font-bold font-MontserratBold lg:mr-[-32px] xl:mr-0">
                         123 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" color="#1B89FF"
@@ -685,20 +684,19 @@ window.addEventListener('DOMContentLoaded', async () => {
                     </div>
                   </div>
 
-                  <div class="flex-1 max-w-[190px] border bg-[#1B89FF] text-white h-[124px] rounded-xl overflow-hidden flex flex-col justify-center items-center">
+                  <div class="flex-1 py-6 md:py-0 min-w-[190px] md:min-w-[150px] max-w-[190px] border bg-[#1B89FF] text-white h-[124px] rounded-xl overflow-hidden flex flex-col justify-center items-center">
                     <div class="text-[14px] lg:text-[16px] font-[600]">
                     with Sprouty</div>
                     <div class="text-[24px] lg:text-4xl lg:leading-[38.4px] font-bold mt-[14px]">
-                      ${numFormatter(withSprouty)}${withSprouty >= 1000000 ? '+' : ''}
+                    ${numFormatter(withSprouty)}${withSprouty >= 1000000 ? '+' : ''}
                     </div>
                   </div>
 
-                  <div class="flex-1 max-w-[190px] border border-[#E0E3EF] h-[124px] rounded-xl overflow-hidden flex flex-col justify-center items-center">
+                  <div class="flex-1 py-6 md:py-0 min-w-[190px] md:min-w-[150px] max-w-[190px] border border-[#E0E3EF] h-[124px] rounded-xl overflow-hidden flex flex-col justify-center items-center">
                     <div class="text-[14px] lg:text-[16px] font-[600] text-[#333]">
                       without Sprouty</div>
                     <div class="text-[24px] lg:text-4xl lg:leading-[38.4px] font-bold mt-[14px]">
-                      543
-                      ${numFormatter(withoutSprouty)}
+                    ${numFormatter(withoutSprouty)}
                     </div>
                   </div>
                 </div>

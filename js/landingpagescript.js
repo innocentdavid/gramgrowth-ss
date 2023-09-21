@@ -611,6 +611,8 @@ window.addEventListener('DOMContentLoaded', async () => {
             // console.log(calculatePercentageDifference(50, 70));
             // console.log(calculatePercentageDifference(withSprouty, withoutSprouty));
 
+            document.getElementById('dash-preview').classList.remove('hidden');
+
             var profile_pic_url = user.profile_pic_url
             var full_name = user.full_name
             var username = user.username

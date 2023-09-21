@@ -387,7 +387,7 @@ const renderWeeklyChart = () => {
         ],
         chart: {
             height: 450,
-            type: 'bar',
+            type: 'line',
             toolbar: {
                 show: false,
             },

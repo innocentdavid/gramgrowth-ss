@@ -592,8 +592,10 @@ function calculatePercentageDifference(num1, num2) {
 
 window.addEventListener('DOMContentLoaded', async () => {
     // return;
+    document.getElementById('dash-preview').classList.add('hidden');
     const res = await getUserData()
     if (res?.message === 'success') {
+        document.getElementById('dash-preview').classList.remove('hidden');
         // console.log(res.data);
         const user = res.data
         if (user) {
@@ -610,8 +612,6 @@ window.addEventListener('DOMContentLoaded', async () => {
             withoutSprouty = getLastItem(r2)
             // console.log(calculatePercentageDifference(50, 70));
             // console.log(calculatePercentageDifference(withSprouty, withoutSprouty));
-
-            document.getElementById('dash-preview').classList.remove('hidden');
 
             var profile_pic_url = user.profile_pic_url
             var full_name = user.full_name

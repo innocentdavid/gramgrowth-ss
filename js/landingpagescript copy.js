@@ -100,7 +100,7 @@ function generateMonthlyDates(months) {
         const monthIndex = currentDate.getMonth();
         const monthName = monthNames[monthIndex];
         const year = currentDate.getFullYear() % 100; // Get the last two digits of the year
-        const formattedDate = `${monthName}/${year}`;
+        const formattedDate = `${monthName}, ${year}`;
         dates.push(formattedDate);
     }
 
@@ -201,10 +201,8 @@ function generateArrays(baseNumber, weekly) {
 }
 
 const renderMonthlyChart = () => {
-    var number_of_bars = 7
     var options = {
-        colors: ["#1B89FF", "#EDEFF1"],
-        // backgroundBarColors: ["#f00"],
+        colors: ["#1B89FF", "#c1c1c1"],
         legend: {
             show: false
         },
@@ -212,16 +210,16 @@ const renderMonthlyChart = () => {
             {
                 name: 'SproutySocial',
                 // data: resultArray1?.slice(),
-                data: resultArray1?.slice(-number_of_bars),
+                data: resultArray1?.slice(-11),
             },
-            // {
-            //     name: 'Others',
-            //     data: resultArray2?.slice(-number_of_bars),
-            // }
+            {
+                name: 'Others',
+                data: resultArray2?.slice(-11),
+            }
         ],
         chart: {
             height: 450,
-            type: 'bar',
+            type: 'line',
             toolbar: {
                 show: false,
             },
@@ -235,16 +233,8 @@ const renderMonthlyChart = () => {
             // width: [2, 1],
             width: 3,
         },
-        plotOptions: {
-            bar: {
-                borderRadius: 14,
-                borderRadiusApplication: 'end'
-            }
-        },
         grid: {
-            show: true,
-            borderColor: '#CDDBEB', // Color of grid lines
-            strokeDashArray: 4,
+            show: false,
             padding: {
                 left: 8,
                 right: 8,
@@ -255,7 +245,7 @@ const renderMonthlyChart = () => {
         },
         xaxis: {
             type: 'category',
-            categories: generateMonthlyDates(number_of_bars),
+            categories: generateMonthlyDates(11),
             labels: {
                 offsetX: 3,
                 // formatter: function (value, timestamp, opts) {
@@ -267,7 +257,7 @@ const renderMonthlyChart = () => {
             }
         },
         yaxis: {
-            show: true,
+            show: false,
         }
     };
 
@@ -360,14 +350,13 @@ function generateWeeklyData(array) {
 }
 
 const renderWeeklyChart = () => {
-    var number_of_bars = 7
     if (!weeklyR1 || weeklyR1?.length === 0) {
         const [r1, r2] = generateArrays(usercurrentFollowersCount, 4);
         weeklyR1 = r1;
         weeklyR2 = r2
     }
     var options = {
-        colors: ["#1B89FF", "#EDEFF1"],
+        colors: ["#1B89FF", "#c1c1c1"],
         legend: {
             show: false
         },
@@ -376,18 +365,18 @@ const renderWeeklyChart = () => {
                 name: 'SproutySocial',
                 // data: resultArray1?.slice(0, 8),
                 // data: generateWeeklyData(resultArray1),
-                data: weeklyR1?.slice(0, number_of_bars),
+                data: weeklyR1?.slice(0, 8),
             },
             {
                 name: 'Others',
-                // data: resultArray2?.slice(0, number_of_bars),
+                // data: resultArray2?.slice(0, 8),
                 // data: generateWeeklyData(resultArray2),
-                data: weeklyR2?.slice(0, number_of_bars),
-            },
+                data: weeklyR2?.slice(0, 8),
+            }
         ],
         chart: {
             height: 450,
-            type: 'bar',
+            type: 'line',
             toolbar: {
                 show: false,
             },
@@ -401,16 +390,8 @@ const renderWeeklyChart = () => {
             // width: [2, 1],
             width: 3,
         },
-        plotOptions: {
-            bar: {
-                borderRadius: 10,
-                borderRadiusApplication: 'end'
-            }
-        },
         grid: {
-            show: true,
-            borderColor: '#CDDBEB', // Color of grid lines
-            strokeDashArray: 4,
+            show: false,
             padding: {
                 left: 8,
                 right: 8,
@@ -421,13 +402,13 @@ const renderWeeklyChart = () => {
         },
         xaxis: {
             type: 'category',
-            categories: generateWeeklyDateRanges(number_of_bars),
+            categories: generateWeeklyDateRanges(8),
             labels: {
                 offsetX: 3,
             }
         },
         yaxis: {
-            show: true,
+            show: false,
         }
     };
 
@@ -435,7 +416,6 @@ const renderWeeklyChart = () => {
 }
 
 const renderDailyChart = () => {
-    var number_of_bars = 7
     // if (!dailyR1 || dailyR1?.length === 0) {
     //     const [r1, r2] = generateArrays(usercurrentFollowersCount, 4);
     //     dailyR1 = r1;
@@ -456,16 +436,10 @@ const renderDailyChart = () => {
         },
         series: [
             {
-                name: 'Others',
-                // data: resultArray2?.slice(0, number_of_bars),
-                // data: generateWeeklyData(resultArray2),
-                data: weeklyR2?.slice(0, number_of_bars),
-            },
-            {
                 name: 'SproutySocial',
-                data: generateDailyData(weeklyR1).slice(0, number_of_bars),
+                data: generateDailyData(weeklyR1).slice(0, 7),
                 // data: dailyR1?.slice(0, 7),
-            },
+            }
         ],
         chart: {
             height: 450,
@@ -483,16 +457,8 @@ const renderDailyChart = () => {
             // width: [2, 1],
             width: 3,
         },
-        plotOptions: {
-            bar: {
-                borderRadius: 10,
-                borderRadiusApplication: 'end'
-            }
-        },
         grid: {
-            show: true,
-            borderColor: '#CDDBEB', // Color of grid lines
-            strokeDashArray: 4,
+            show: false,
             padding: {
                 left: 8,
                 right: 8,
@@ -503,7 +469,7 @@ const renderDailyChart = () => {
         },
         xaxis: {
             type: 'category',
-            categories: generateDates(number_of_bars),
+            categories: generateDates(7),
             labels: {
                 offsetX: 3,
                 // formatter: function (value, timestamp, opts) {
@@ -521,7 +487,7 @@ const renderDailyChart = () => {
             }
         },
         yaxis: {
-            show: true,
+            show: false,
         }
     };
 

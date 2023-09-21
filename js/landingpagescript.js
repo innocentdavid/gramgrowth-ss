@@ -214,14 +214,14 @@ const renderMonthlyChart = () => {
                 // data: resultArray1?.slice(),
                 data: resultArray1?.slice(-number_of_bars),
             },
-            // {
-            //     name: 'Others',
-            //     data: resultArray2?.slice(-number_of_bars),
-            // }
+            {
+                name: 'Others',
+                data: resultArray2?.slice(-number_of_bars),
+            }
         ],
         chart: {
             height: 450,
-            type: 'bar',
+            type: 'line',
             toolbar: {
                 show: false,
             },
@@ -301,8 +301,8 @@ function generateDailyData(array) {
 
     });
 
-    console.log(array);
-    console.log(result);
+    // console.log(array);
+    // console.log(result);
     return result;
 }
 
@@ -387,7 +387,7 @@ const renderWeeklyChart = () => {
         ],
         chart: {
             height: 450,
-            type: 'line',
+            type: 'bar',
             toolbar: {
                 show: false,
             },
@@ -447,7 +447,7 @@ const renderDailyChart = () => {
         weeklyR2 = r2
     }
 
-    console.log(weeklyR1[0]);
+    // console.log(weeklyR1[0]);
 
     var options = {
         colors: ["#1B89FF", "#c1c1c1"],
